@@ -38,3 +38,15 @@ python manage.py shell
 ```
 python3 ./manage.py runserver
 ```
+
+## Ajouter une nouvelle application
+
+```
+django-admin startapp <nomApp>
+```
+
+Après l'ajout de votre application, il faut ajouter votre app dans le fichier settings.py dans la partie "INSTALLED_APPS" à la suite sous cette forme : '<nomApp>'
+
+## Installer les dépendences
+
+Pour installer les dépendences, il faut vous situer dans le dossier static et exécuter cette commande : ``` npm install ```
