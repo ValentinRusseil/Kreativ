@@ -7,6 +7,11 @@ Pour les dépendances :
 pip install -r requirements.txt
 ```
 
+Initialiser ses dépendences avec tailwind :
+```
+python3 manage.py tailwind start
+```
+
 ## Migrations et accès à la base de données
 
 Pour faire les migrations suite à des changements de la base de données :
