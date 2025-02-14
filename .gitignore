@@ -11,7 +11,10 @@ local_settings.py
 ### Node modules ###
 static/node_modules
 static/package-lock.json
+node_modules/
 
 ### Package lock ###
-
 package-lock.json
+
+### VSC settings ###
+.vscode
