@@ -4,59 +4,37 @@
   {% load static tailwind_tags %}
   <head>
     <meta charset="utf-8" />
-    <title>{% block title %}{% endblock %}</title>
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
     {% block metas %}
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    {% tailwind_css %} 
-    {% load static %} {% endblock %} 
-    {% block styles %} {% endblock %}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      {% tailwind_css %}
+      {% load static %}
+    {% endblock %}
+
+    {% block styles %}
+
+    {% endblock %}
   </head>
 
   <body>
-    {% block nav %}
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-          <div
-            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-          >
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
-                <a
-                  href="#"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                  aria-current="page"
-                  >Page d'accueil</a
-                >
-                <a
-                  href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >Contenu</a
-                >
-                <a
-                  href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >À propos</a
-                >
-                <a
-                  href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >Contact</a
-                >
-                <a
-                  href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >Partenaires</a
-                >
-                <a
-                  href="#"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >Évents</a
-                >
-              </div>
+        <div class="hidden sm:ml-6 sm:block"> 
+          <div class="flex flex-row w-full justify-between h-16 items-center">
+            <div class="mr-10 block">
+              <img class="logo-kreativ" src="{% static 'images/logo/logoKreativ.png' %}" width="55px" heigth="35px" alt="Logo kreativ" />
+            </div>
+            <div class="ml-4 flex space-x-4">
+              <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Accueil</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contenu</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">À propos</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Événements</a>
+              <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 rounded-full border-2">Nos Réseaux</a>
             </div>
           </div>
         </div>
@@ -65,48 +43,23 @@
       <!-- Mobile menu, show/hide based on menu state. -->
       <div class="sm:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
-          <a
-            href="#"
-            class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-            aria-current="page"
-            >Page d'accueil</a
-          >
-          <a
-            href="#"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >Contenu</a
-          >
-          <a
-            href="#"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >À propos</a
-          >
-          <a
-            href="#"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >Contact</a
-          >
-          <a
-            href="#"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >Partenaires</a
-          >
-          <a
-            href="#"
-            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >Évents</a
-          >
+          <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Page d'accueil</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contenu</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">À propos</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Partenaires</a>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Évents</a>
         </div>
       </div>
     </nav>
-    {% endblock %}
     <main role="main">
-      <div class="m-4">{% block content %} {% endblock %}</div>
+      {% block content %}
+
+      {% endblock %}
     </main>
     {% block js %}
-    <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'node_modules/popper.js/dist/popper.min.js' %}"></script>
-
+      <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+      <script src="{% static 'node_modules/popper.js/dist/popper.min.js' %}"></script>
     {% endblock %}
   </body>
 </html>

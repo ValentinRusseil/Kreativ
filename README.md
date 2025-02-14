@@ -44,6 +44,12 @@ python manage.py shell
 python3 ./manage.py runserver
 ```
 
+Lancer le serveur web et tailwind :
+
+```
+python3 startProject.py
+```
+
 ## Ajouter une nouvelle application
 
 ```

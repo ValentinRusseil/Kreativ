@@ -1,7 +1,18 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
 
-<div>
-  <h1>Bienvenue sur le site de Kreativ !</h1>
+{% load static %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="h-[90vh]">
+  <img class="w-full h-full object-cover" src="{% static 'images/wallpaper/fond_homepage.png' %}" alt="Fond home page">
+  <div class="overlay-text absolute text-lg font-[bold] top-3/4">
+    <h1 class="ml-4">Bienvenue sur le site de Kreativ !</h1>
+  </div>
 </div>
 
 {% endblock %}
