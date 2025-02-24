@@ -1,57 +1,59 @@
-{% extends 'base.html' %} 
-
-{% load static %}
-
-{% block styles %}
-
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block styles %} {% endblock %} {% block content %}
 
 <div>
-  <div class="h-[100vh]">
-      <img class="w-full h-full object-cover" src="{% static 'images/wallpaper/fond_homepage.png' %}" alt="Fond home page">
-      <div class="absolute top-[60%] w-[750px] overlay-text max-w-full text-lg font-bold">
-        <h1 class="text-5xl pl-20 text-white font-(family-name: 'Clash Grotesk Variable')">
-          Bienvenue sur le site de Kreativ ! <br>
-          Le réseau qui vulgarise le métier du design.
-        </h1>
-      </div>
-  </div>  
-
-  <div class="bg-black min-h-[50vh]">
-    <div class="flex pl-20 pt-10 justify-between items-center">
-      <h2 class="text-white font-(family-name: 'Clash Grotesk Variable') font-bold text-xl">Nos derniers contenus</h2>
-      <button type="button" class="w-[30px] h-[50px] mr-10 font-bold"><img class="max-w-[50%]" src="{% static 'images/icons/next-icon.png' %}" alt="next-icon" /></button>
-
-      <div class="container mx-auto px-4 py-6">
-        <h2 class="text-2xl font-bold mb-4">Nos derniers contenus</h2>
-        <!-- Cartes -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {% for contenu in contenus %}
-                <div class="relative bg-cyan-400 rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 {% if forloop.first %}border-4 border-purple-500{% endif %}">
-                    {% if contenu.image %}
-                        <img src="{% static contenu.image %}" alt="Image" class="w-full h-48 object-cover">
-                    {% endif %}
-                    <div class="p-4">
-                        <h5 class="text-xl font-bold">{{ contenu.title }}</h5>
-                        <p class="text-sm text-gray-900">{{ contenu.description }}</p>
-                        <a href="#" class="mt-2 inline-block px-4 py-2 bg-white text-black font-semibold rounded-lg">Aller voir</a>
-                    </div>
-                </div>
-            {% endfor %}
+    <div class="h-[100vh]">
+        <img
+            class="w-full h-full object-cover"
+            src="{% static 'images/wallpaper/fond_homepage.png' %}"
+            alt="Fond home page"
+        />
+        <div class="absolute top-[60%] w-[750px] overlay-text max-w-full text-lg font-bold">
+            <h1 class="text-5xl pl-20 text-white font-(family-name: 'Clash Grotesk Variable')">
+                Bienvenue sur le site de Kreativ ! <br />
+                Le réseau qui vulgarise le métier du design.
+            </h1>
         </div>
-      </div>
     </div>
 
-    <div class="flex">
+    <div class="bg-black min-h-[50vh]">
+        <div class="flex pl-20 pt-10 justify-between items-center">
+            <h2 class="text-white font-(family-name: 'Clash Grotesk Variable') font-bold text-xl">
+                Nos derniers contenus
+            </h2>
+            <button type="button" class="w-[30px] h-[50px] mr-10 font-bold">
+                <img class="max-w-[50%]" src="{% static 'images/icons/next-icon.png' %}" alt="next-icon" />
+            </button>
 
-    </div>
+            <div class="container mx-auto px-4 py-6">
+                <h2 class="text-2xl font-bold mb-4">Nos derniers contenus</h2>
+                <!-- Cartes -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {% for contenu in contenus %}
+                    <div
+                        class="relative bg-cyan-400 rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 {% if forloop.first %}border-4 border-purple-500{% endif %}"
+                    >
+                        {% if contenu.image %}
+                        <img src="{% static contenu.image %}" alt="Image" class="w-full h-48 object-cover" />
+                        {% endif %}
+                        <div class="p-4">
+                            <h5 class="text-xl font-bold">{{ contenu.title }}</h5>
+                            <p class="text-sm text-gray-900">{{ contenu.description }}</p>
+                            <a href="#" class="mt-2 inline-block px-4 py-2 bg-white text-black font-semibold rounded-lg"
+                                >Aller voir</a
+                            >
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 
-    <div class="pl-20 pt-10">
-      <h1 class="text-white font-(family-name: 'Clash Grotesk Variable') font-bold text-xl">Nos partenaires</h1>
+        <div class="flex"></div>
+
+        <div class="pl-20 pt-10">
+            <h1 class="text-white font-(family-name: 'Clash Grotesk Variable') font-bold text-xl">Nos partenaires</h1>
+        </div>
     </div>
-  </div>
 </div>
 
 {% endblock %}
