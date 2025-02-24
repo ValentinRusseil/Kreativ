@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
   {% load static tailwind_tags %}
   <head>
@@ -13,6 +12,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       {% tailwind_css %}
       {% load static %}
+      <link rel="stylesheet" href="{% static 'src/output.css' %}">
     {% endblock %}
 
     {% block styles %}
@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <nav class="bg-gray-800">
+    <nav class="bg-[#f04464]">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="hidden sm:ml-6 sm:block"> 
           <div class="flex flex-row w-full justify-between h-16 items-center">
