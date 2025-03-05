@@ -15,9 +15,8 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    if os.environ.get('RUN_MAIN') != 'true':
-        print("Lancement de Tailwind...")
-        subprocess.Popen(["bash", "-c", "npm run dev"], cwd="theme/static_src", shell=True)
+        
+    subprocess.Popen(["bash", "-c", "npm run dev"], cwd="theme/static_src", stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     execute_from_command_line(sys.argv)
 
 

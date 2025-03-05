@@ -10,7 +10,7 @@
     "sync": "browser-sync start --config bs.config.js",
     "dev:tailwind": "cross-env NODE_ENV=development tailwindcss --postcss -i ./src/styles.css -o ../static/css/dist/styles.css -w",
     "dev:sync": "run-p dev:tailwind sync",
-    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "dev": "tailwindcss -i ./src/styles.css -o ./src/output.css --watch",
     "tailwindcss": "node ./node_modules/tailwindcss/lib/cli.js"
   },
   "keywords": [],
