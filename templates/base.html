@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-  {% load static tailwind_tags %}
   <head>
     <meta charset="utf-8" />
     <title>
       {% block title %}
-
+      
       {% endblock %}
     </title>
     {% block metas %}
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      {% load static tailwind_tags %}
       {% tailwind_css %}
       {% load static %}
       <link rel="stylesheet" href="{% static 'src/output.css' %}">
     {% endblock %}
 
     {% block styles %}
-
+      <style>
+        @layer utilities {
+          .animate-bounce-once {
+            animation: bounce 5s;
+          }
+        }
+      </style>
     {% endblock %}
   </head>
 
   <body>
+
     <nav class="bg-[#f04464]">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="hidden sm:ml-6 sm:block"> 
           <div class="flex flex-row w-full justify-between h-16 items-center">
             <div class="mr-10 block">
-              <img class="logo-kreativ" src="{% static 'images/logo/logoKreativ.png' %}" width="55px" heigth="35px" alt="Logo kreativ" />
+              <img src="{% static 'images/logo/logoKreativ.png' %}" width="55px" heigth="35px" alt="Logo kreativ" />
             </div>
             <div class="ml-4 flex space-x-4">
-              <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Accueil</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contenu</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">À propos</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Événements</a>
-              <a href="#" class="px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 rounded-full border-2">Nos Réseaux</a>
+              <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-[#f4f4f4] hover:bg-transparent">Accueil</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-[#f4f4f4] hover:text-white hover:animate-bounce-once">Contenu</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-[#f4f4f4] hover:bg-transparent hover:text-white">À propos</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-[#f4f4f4] hover:bg-transparent hover:text-white">Contact</a>
+              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-[#f4f4f4] hover:bg-transparent hover:text-white">Événements</a>
+              <a href="#" class="px-3 py-2 text-sm font-medium text-[#f4f4f4] hover:bg-transparent rounded-full border-2">Nos Réseaux</a>
             </div>
           </div>
         </div>
@@ -57,6 +64,9 @@
 
       {% endblock %}
     </main>
+
+    {% include "footer.html" %}
+
     {% block js %}
     {% endblock %}
   </body>
