@@ -18,3 +18,6 @@ package-lock.json
 
 ### VSC settings ###
 .vscode
+
+### Theme static output ###
+theme/static_src/src/output.css
