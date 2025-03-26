@@ -56,6 +56,10 @@ python3 startProject.py
 ```
 django-admin startapp <nomApp>
 ```
+ou
+```
+python3 -m django startapp <nomApp>
+```
 
 Après l'ajout de votre application, il faut ajouter votre app dans le fichier settings.py dans la partie "INSTALLED_APPS" à la suite sous cette forme : '<nomApp>'
 

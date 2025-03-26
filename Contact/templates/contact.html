@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+<div class="bg-black p-10">
+    <h1 class="contact-title font-(family-name: 'Clash Grotesk Variable')">Nous contacter</h1>
+    
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" name="nom" placeholder="Nom" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="prenom" placeholder="Prénom" required>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <input type="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group flex gap-2">
+                <select name="indicatif" class="w-1/3" required>
+                    <option value="+33">France (+33)</option>
+                    <option value="+1">États-Unis/Canada (+1)</option>
+                    <option value="+44">Royaume-Uni (+44)</option>
+                    <option value="+49">Allemagne (+49)</option>
+                    <option value="+34">Espagne (+34)</option>
+                    <option value="+39">Italie (+39)</option>
+                    <option value="+32">Belgique (+32)</option>
+                    <option value="+41">Suisse (+41)</option>
+                    <option value="+351">Portugal (+351)</option>
+                    <option value="+31">Pays-Bas (+31)</option>
+                    <option value="+352">Luxembourg (+352)</option>
+                    <option value="+212">Maroc (+212)</option>
+                    <option value="+213">Algérie (+213)</option>
+                    <option value="+216">Tunisie (+216)</option>
+                </select>
+                <input type="tel" name="telephone" placeholder="Numéro de téléphone" class="w-2/3" pattern="[0-9]{9,}" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" placeholder="Message" rows="6" required></textarea>
+        </div>
+
+        <div class="form-group text-right">
+            <button type="submit" class="btn-submit">Envoyer</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
