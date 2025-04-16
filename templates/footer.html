@@ -1,7 +1,4 @@
-{% load static %} 
-
-{% block styles %}
-{% endblock %}
+{% load static %} {% block styles %} {% endblock %}
 
 <footer class="bg-[#ed254e] text-white py-10">
     <div class="container mx-auto px-6 lg:px-20">
@@ -22,7 +19,9 @@
 
             <!-- Bouton d'inscription -->
             <div>
-                <button class="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#e91e63] transition">
+                <button
+                    class="border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#e91e63] transition"
+                >
                     S'inscrire à notre newsletter
                 </button>
             </div>
@@ -74,7 +73,14 @@
                     <li><a href="https://www.instagram.com/kreativ.fr/" class="hover:underline">Instagram</a></li>
                     <li><a href="https://www.tiktok.com/@kreativ.fr/" class="hover:underline">LinkedIn</a></li>
                     <li><a href="https://www.linkedin.com/company/kreativ-fr/" class="hover:underline">TikTok</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D" class="hover:underline" target="_blank">Discord</a></li>
+                    <li>
+                        <a
+                            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"
+                            class="hover:underline"
+                            target="_blank"
+                            >Discord</a
+                        >
+                    </li>
                 </ul>
             </div>
         </div>
@@ -93,8 +99,11 @@
                 <a href="https://www.linkedin.com/company/kreativ-fr/">
                     <img src="{% static 'images/icons/tiktok.png' %}" alt="TikTok" class="w-10 h-10" />
                 </a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D" target="_blank">
-                    <img src="{% static 'images/icons/discord.png' %}" alt="Discord" class="w-8 h-6" /> 
+                <a
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D"
+                    target="_blank"
+                >
+                    <img src="{% static 'images/icons/discord.png' %}" alt="Discord" class="w-8 h-6" />
                 </a>
             </div>
         </div>

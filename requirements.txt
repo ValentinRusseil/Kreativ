@@ -13,3 +13,4 @@ sqlparse==0.4.4
 typing_extensions==4.8.0
 tzdata==2023.3
 django-tailwind==3.8.0
+requests==2.31.0
