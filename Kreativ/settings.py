@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
+    'sendgrid',
     'Article',
     'SousContenu',
     'Contact',
@@ -140,3 +141,7 @@ MEDIA_URL = '/images/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Email configuration for SMTP
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
