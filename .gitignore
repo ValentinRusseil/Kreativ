@@ -21,5 +21,7 @@ package-lock.json
 
 ### Theme static output ###
 theme/static_src/src/output.css
-### env ###
+
+### env files ###
+.env
 env

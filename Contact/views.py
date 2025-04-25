@@ -4,44 +4,72 @@ from django.conf import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
-from Kreativ.settings import SENDGRID_API_KEY
+import os
 
 # Create your views here.
 def contact_page(request):
+    context = {}  # Initialiser le contexte
+    
     if request.method == 'POST':
-        nom = request.POST.get('nom')
-        prenom = request.POST.get('prenom')
-        email = request.POST.get('email')
-        telephone = request.POST.get('number')
-        entreprise = request.POST.get('entreprise')
-        msg = request.POST.get('message')
+        # Récupération des données du formulaire
+        form_data = {
+            'nom': request.POST.get('nom'),
+            'prenom': request.POST.get('prenom'),
+            'email': request.POST.get('email'),
+            'telephone': request.POST.get('number'),
+            'entreprise': request.POST.get('entreprise'),
+            'message': request.POST.get('message')
+        }
+        
+        # Ajouter les données du formulaire au contexte
+        context.update(form_data)
 
-        to_email="matteo.pereira@ynov.com"
         subject="Demande de contact"
-        html_content=f"<div style='white-space:pre'>\n\n\Demande de contact de {nom} {prenom},\n\n    Voici son mail : {email},\n\n    Voici son contact :\n telephone : {telephone}\n    entreprise: {entreprise}\n message : {msg}\n\n</div>"
-        response = send_email(to_email, subject, html_content)
-        if response == 202:
-            return HttpResponse('Email sent successfully!')
-        else:
-            return HttpResponse('Failed to send email.')    
-    # Ajout d'un retour explicite pour les cas où la méthode n'est pas POST
-    if request.method != 'POST':
-        return render(request, 'contact.html', context={})
+        html_content=f"""<div style='white-space:pre'>
+            Demande de contact de {form_data['nom']} {form_data['prenom']},
 
-def send_email(to_email, subject, html_content):
+                Voici son mail : {form_data['email']},
+
+                Voici son contact :
+                telephone : {form_data['telephone']}
+                entreprise: {form_data['entreprise']}
+                message : {form_data['message']}
+
+            </div>"""
+            
+        response = send_email(subject, html_content)
+        if response == 202:
+            context['message'] = 'Votre message a été envoyé avec succès !'
+            # Vider les champs du formulaire en cas de succès
+            context.update({k: '' for k in form_data.keys()})
+        else:
+            context['message'] = f'Échec de l\'envoi du message. Erreur avec le serveur.'
+
+    return render(request, 'contact.html', {'context': context})
+
+def send_email(subject, html_content):
+    # Liste des destinataires
+    to_emails = [
+        # Ajoutez d'autres destinataires si nécessaire
+        # "hi.kreativmedia@gmail.com",
+        "russeilvalentin6@gmail.com"
+    ]
+
     message = Mail(
         from_email="matteo.pereira@ynov.com",
-        to_emails=to_email,
+        to_emails=to_emails,
         subject=subject,
         html_content=html_content
     )
     try:
-        sg = SendGridAPIClient(SENDGRID_API_KEY)
-        response = sg.send(message)
-        print(f"SendGrid Response Status: {response.status_code}")
-        print(f"SendGrid Response Body: {response.body}")
-        print(f"SendGrid Response Headers: {response.headers}")
-        return response.status_code
+        print("success")
+        sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
+        message = sg.send(message)
+        return message.status_code
     except Exception as e:
-        print(f"Erreur lors de l'envoi de l'email : {e}")
+        print("error")
+        print(f"Erreur lors de l'envoi de l'email : {str(e)}")
+        print(f"Type d'erreur : {type(e)}")
+        if hasattr(e, 'body'):
+            print(f"Corps de l'erreur : {e.body}")
         return str(e)
