@@ -37,7 +37,7 @@ def get_instagram_posts():
         print(f"Erreur lors de la récupération des posts Instagram: {str(e)}")
         return []
 
-def home_page(request):
+def contenu_posts():
     # Récupérer les posts Instagram
     instagram_posts = get_instagram_posts()
     
@@ -52,7 +52,12 @@ def home_page(request):
         {"title": "Titre 6", "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "image": None},
     ]
     
-    # Combiner les posts Instagram avec les posts par défaut
-    contenus = instagram_posts + default_posts
+    if instagram_posts:
+        return instagram_posts
+    else:
+        return default_posts
+
+def home_page(request):
+    contenus = contenu_posts()
     
     return render(request, template_name="home_page.html", context={'contenus': contenus})
