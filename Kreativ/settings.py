@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'SousContenu',
     'Contact',
     'aPropos',
+    'Contenu',
 ]
 
 MIDDLEWARE = [
