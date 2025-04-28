@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'Contact',
     'aPropos',
     'Contenu',
+    'Evenement'
 ]
 
 MIDDLEWARE = [
