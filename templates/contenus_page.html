@@ -13,26 +13,36 @@
     <div class="overflow-hidden pr-20 -mr-20">
         <div class="flex gap-16 transition-all duration-500" id="content-slider">
             {% for contenu in contenus %}
-            <div class="min-w-[400px] h-[500px] rounded-2xl overflow-hidden relative group">
-                {% if contenu.image %}
-                <img src="{% static contenu.image %}" alt="Image" class="w-full h-full object-cover absolute inset-0" />
-                {% else %}
-                <div class="absolute inset-0 bg-gradient-to-br from-[#f04464] via-[#ff6b8b] to-[#ff97ab]"></div>
-                {% endif %}
-                <div class="absolute inset-0 flex flex-col justify-between">
-                    <div class="bg-black/30 backdrop-blur-sm p-8 w-full">
-                        <h5 class="text-3xl font-bold text-white mb-3">{{ contenu.title }}</h5>
-                        <p class="text-white/80 text-base">{{ contenu.description }}</p>
+                <div class="min-w-[400px] h-[500px] rounded-2xl overflow-hidden relative group">
+                    {% if contenu.image %}
+                        <img src="{% static contenu.image %}" alt="Image" class="w-full h-full object-cover absolute inset-0" />
+                    {% else %}
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#f04464] via-[#ff6b8b] to-[#ff97ab]"></div>
+                    {% endif %}
+                    <div class="absolute inset-0 flex flex-col justify-between">
+                        <div class="bg-black/30 backdrop-blur-sm p-8 w-full">
+                            <h5 class="text-3xl font-bold text-white mb-3">{{ contenu.title }}</h5>
+                            <p class="text-white/80 text-base">{{ contenu.description }}</p>
+                        </div>
+                       {% if contenu.url %} 
+                            <a href="{{ c.url }}"
+                                class="inline-block px-8 py-3 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full hover:bg-white/30 transition w-fit mx-auto mb-6">
+                                Aller voir
+                            </a>
+                        {% else %}
+                            <a href="/"
+                                class="inline-block px-8 py-3 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full hover:bg-white/30 transition w-fit mx-auto mb-6">
+                                Aller voir
+                        </a>
+                        {% endif %}
                     </div>
-                    <a href="#"
-                        class="inline-block px-8 py-3 bg-white/20 backdrop-blur-sm text-white font-medium rounded-full hover:bg-white/30 transition w-fit mx-auto mb-6">
-                        Aller voir
-                    </a>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>
+
+    {% comment %} <!-- Elfsight Instagram Feed | Insta rss flux --> <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-345f4736-2e71-424d-b943-5dfe162e7aa4" data-elfsight-app-lazy></div> {% endcomment %}
 </div>
 
 <script>
