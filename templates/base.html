@@ -20,6 +20,7 @@
 </head>
 
 <body>
+    {% comment %} <div class="{% if request.path == '/' %}bg-[#f04464]{% else %}bg-[#ffb9ff]{% endif %}"> {% endcomment %}
     <nav class="bg-[#f04464]">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="hidden sm:ml-6 sm:block">
@@ -31,11 +32,11 @@
                     <div class="ml-4 flex space-x-4">
                         <a href="/"
                             class="rounded-md px-3 py-2 text-sm font-semibold text-[#f4f4f4] hover:bg-transparent">Accueil</a>
-                        <a href="{% url 'contenu_page' %}"
-                            class="rounded-md px-3 py-2 text-sm font-semibold text-[#f4f4f4] hover:text-white hover:animate-bounce-once">Contenu</a>
                         <a href="{% url 'a_propos' %}"
                             class="rounded-md px-3 py-2 text-sm font-semibold text-[#f4f4f4] hover:bg-transparent hover:text-white">À
                             propos</a>
+                        <a href="{% url 'contenu_page' %}"
+                            class="rounded-md px-3 py-2 text-sm font-semibold text-[#f4f4f4] hover:text-white hover:animate-bounce-once">Contenu</a>
                         <a href="{% url 'contact_page' %}"
                             class="rounded-md px-3 py-2 text-sm font-semibold text-[#f4f4f4] hover:bg-transparent hover:text-white">Contact</a>
                         <a href="{% url 'evenement_page' %}"

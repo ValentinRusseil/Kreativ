@@ -1,18 +1,20 @@
 {% extends 'base.html' %} {% load static %} {% block styles %} {% endblock %} {% block content %}
 
 <div>
-    <div class="h-[100vh]">
-        <img class="w-full h-full object-cover" src="{% static 'images/wallpaper/fond_homepage.png' %}"
+    <div class="relative w-full bg-[#ffb9ff]">
+        <img class="w-full h-auto block" src="{% static 'images/wallpaper/fond_homepage.png' %}"
             alt="Fond home page" />
         <div class="absolute top-[60%] w-[750px] overlay-text max-w-full text-lg font-bold">
             <h1 class="text-5xl pl-20 text-white font-(family-name: 'Clash Grotesk Variable')">
-                Bienvenue sur le site de Kreativ ! <br />
-                Le réseau qui vulgarise le métier du design.
+                Chez Kreativ, <br/>
+                on décrypte, <br/>
+                on explore, <br/>
+                on partage !
             </h1>
         </div>
     </div>
 
-    <div class="bg-black min-h-[50vh]">
+    <div class="bg-[#ffb9ff] min-h-[50vh]">
         {% include 'contenus_page.html' %}
 
         <div class="pl-20 pt-6">
