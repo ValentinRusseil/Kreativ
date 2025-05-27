@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ui7!p+yyc0&ov)r!5p=&^=52=hojl49k0pzu)6-5bpes#h&ku7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['kreativ.up.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['.railway.app', '127.0.0.1', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ['https://kreativ.up.railway.app']
 
