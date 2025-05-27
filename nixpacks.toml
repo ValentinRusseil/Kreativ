@@ -2,7 +2,7 @@
 nixpacksVersion = "1.19.0"
 
 [phases.setup]
-nixpkgs = ["nodejs_20", "python310"]
+nixpkgs = ["nodejs_20", "python"]
 
 [phases.build]
 cmds = [
