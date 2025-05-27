@@ -1,10 +1,6 @@
 [build]
 nixpacksVersion = "1.19.0"
 
-[providers]
-providers = ["python", "node"]
-
-
 [phases.setup]
 nixpkgs = ["nodejs_20", "python3", "gcc", "openssl"]
 
