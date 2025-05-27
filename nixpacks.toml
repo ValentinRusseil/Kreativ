@@ -2,7 +2,7 @@
 nixpacksVersion = "1.19.0"
 
 [phases.setup]
-aptPkgs = ["nodejs_20"]
+nixpkgs = ["nodejs_20"]
 
 [phases.build]
 cmds = [
