@@ -1,4 +1,5 @@
 asgiref==3.7.2
+beautifulsoup4==4.13.4
 certifi==2025.1.31
 charset-normalizer==3.4.1
 Django==4.2.6
@@ -9,14 +10,17 @@ django-htmx==1.17.2
 django-tailwind==3.8.0
 django-widget-tweaks==1.5.0
 djangorestframework==3.14.0
+gunicorn==23.0.0
 idna==3.10
 # mysqlclient==2.1.1
+packaging==25.0
 Pillow==10.1.0
-python-dotenv==1.1.0
+python-decouple==3.8
 python-http-client==3.3.7
 pytz==2023.3.post1
 requests==2.32.3
 sendgrid==6.11.0
+soupsieve==2.7
 sqlparse==0.4.4
 starkbank-ecdsa==2.2.0
 typing_extensions==4.8.0
