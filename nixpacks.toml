@@ -3,7 +3,7 @@ nixpacksVersion = "1.19.0"
 providers = ["python", "node"]
 
 [phases.setup]
-nixpkgs = ["python311Full", "gcc", "openssl"]
+nixpkgs = ["gcc", "openssl", "pkgs.python312.withPackages (ps: with ps; [ pip setuptools wheel ])"]
 
 [phases.install]
 cmds = [
