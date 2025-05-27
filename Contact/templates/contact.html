@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load static %} {% block styles %} {% endblock %} {% block content %}
-<div class="bg-black p-16">
+<div class="bg-[#ffb9ff] p-16">
     <div class="max-w-md mx-auto px-4">
-        <h1 class="text-white font-(family-name: 'Clash Grotesk Variable') text-2xl mb-8">Nous contacter</h1>
+        <h1 class="text-black font-(family-name: 'Clash Grotesk Variable') text-2xl mb-8">Nous contacter</h1>
 
         {% if context.message %}
         <div class="p-4 mb-4 text-sm {% if 'succès' in context.message %}text-green-800 bg-green-100{% else %}text-red-800 bg-red-100{% endif %} rounded-lg"
