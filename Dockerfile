@@ -23,7 +23,7 @@ WORKDIR /app
 COPY . .
 
 # Copier les fichiers statiques du build Node
-COPY --from=frontend-builder /app/theme/static_src/dist ./theme/static_src/dist
+COPY --from=frontend-builder /app/theme/static/css/dist ./theme/static/css/dist
 
 # Installer les dépendances Python
 RUN pip install --upgrade pip \
