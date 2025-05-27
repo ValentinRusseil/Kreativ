@@ -6,8 +6,6 @@
     <title>{% block title %} {% endblock %}</title>
     {% block metas %}
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    {% load static tailwind_tags %}
-    {% comment %} {% tailwind_css %} {% endcomment %}
     {% load static %}
         <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}" />
     {% endblock %} {% block styles %}

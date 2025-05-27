@@ -24,6 +24,7 @@ COPY . .
 
 # Copier les fichiers statiques du build Node
 COPY --from=frontend-builder /app/theme/static/css/dist ./theme/static/css/dist
+RUN ls -al /app/theme/static/css/dist
 
 # Installer les dépendances Python
 RUN pip install --upgrade pip \
