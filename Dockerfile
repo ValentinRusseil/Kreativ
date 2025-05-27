@@ -4,7 +4,7 @@ FROM node:20 AS frontend-builder
 WORKDIR /app
 COPY ./theme/static_src ./theme/static_src
 WORKDIR /app/theme/static_src
-RUN npm install && npm run build:tailwind
+RUN npm install && npm run build
 
 # Étape 2 : environnement Python
 FROM python:3.12-slim
