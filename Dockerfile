@@ -3,6 +3,7 @@ FROM node:20 AS frontend-builder
 
 WORKDIR /app
 COPY ./theme/static_src ./theme/static_src
+COPY ./templates ./templates
 WORKDIR /app/theme/static_src
 RUN npm install && npm run build
 
