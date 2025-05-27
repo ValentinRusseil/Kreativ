@@ -2,7 +2,7 @@
 nixpacksVersion = "1.19.0"
 
 [phases.setup]
-nixpkgs = ["nodejs_20", "nodePackages.npm"]
+aptPkgs = ["nodejs_20"]
 
 [phases.build]
 cmds = [
@@ -14,4 +14,4 @@ cmds = [
 ]
 
 [start]
-cmd = "python manage.py runserver 0.0.0.0:$PORT"
+cmd = "gunicorn Kreativ.wsgi:application --bind 0.0.0.0:$PORT"
