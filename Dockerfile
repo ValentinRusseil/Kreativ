@@ -5,10 +5,9 @@ WORKDIR /app
 COPY ./theme/static_src ./theme/static_src
 COPY ./templates ./templates
 COPY ./aPropos/templates ./aPropos/templates
-COPY ./Articles/templates ./Articles/templates
 COPY ./Contact/templates ./Contact/templates
-COPY ./Evenements/templates ./Evenements/templates
-COPY ./SousContenu/templates ./SousContenu/templates
+COPY ./Contenu/templates ./Contenu/templates
+COPY ./Evenement/templates ./Evenement/templates
 WORKDIR /app/theme/static_src
 RUN npm install && npm run build
 
