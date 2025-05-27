@@ -2,10 +2,11 @@
 nixpacksVersion = "1.19.0"
 
 [phases.setup]
-nixpkgs = ["nodejs_20", "python310", "pip", "git"]
+nixpkgs = ["nodejs_20", "python310"]
 
 [phases.build]
 cmds = [
+  "python3 -m pip install --upgrade pip==22.0.2",
   "pip install -r requirements.txt",
   "cd theme/static_src && npm install",
   "npm run build",
