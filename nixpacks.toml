@@ -3,10 +3,12 @@ nixpacksVersion = "1.19.0"
 providers = ["python", "node"]
 
 [phases.setup]
-nixpkgs = ["python311Full", "gcc", "openssl", "nodejs_20", "python311Packages.pip"]
+nixpkgs = ["python311Full", "gcc", "openssl", "nodejs_20"]
 
 [phases.install]
 cmds = [
+  "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py",
+  "python get-pip.py",
   "pip install -r requirements.txt",
   "cd theme/static_src && npm install"
 ]
