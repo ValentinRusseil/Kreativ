@@ -6,6 +6,7 @@ nixpkgs = ["nodejs_20", "python3", "pip", "git"]
 
 [phases.build]
 cmds = [
+  "pip install --upgrade pip",
   "pip install -r requirements.txt",
   "cd theme/static_src && npm install",
   "npm run build",
