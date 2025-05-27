@@ -1,11 +1,11 @@
 [providers]
-python = "python310"
+python = "python"
 
 [build]
 nixpacksVersion = "1.19.0"
 
 [phases.setup]
-nixpkgs = ["nodejs_20", "python310", "gcc", "openssl"]
+nixpkgs = ["nodejs_20", "python3", "gcc", "openssl"]
 
 
 [phases.build]
