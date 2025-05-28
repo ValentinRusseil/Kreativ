@@ -26,8 +26,7 @@
             <div class="hidden sm:ml-6 sm:block">
                 <div class="flex flex-row w-full justify-between h-16 items-center">
                     <div class="mr-10 block">
-                        <img src="{% static 'images/logo/logoKreativ.png' %}" width="55px" heigth="35px"
-                            alt="Logo kreativ" />
+                        <img src="{% static 'images/logo/logoKreativ.png' %}"  width="55px" heigth="35px" loading="lazy" alt="Logo kreativ" />
                     </div>
                     <div class="ml-4 flex space-x-4">
                         <a href="/"
@@ -50,18 +49,16 @@
         <div class="sm:hidden" id="mobile-menu">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                    aria-current="page">Page d'accueil</a>
-                <a href="#"
-                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contenu</a>
-                <a href="#"
+                    aria-current="page">Accueil</a>
+                <a href="{% url 'a_propos' %}"
                     class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">À
                     propos</a>
-                <a href="#"
+                <a href="{% url 'contenu_page' %"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contenu</a>
+                <a href="{% url 'contact_page' %}"
                     class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
-                <a href="#"
-                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Partenaires</a>
-                <a href="#"
-                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Évents</a>
+                <a href="{% url 'evenement_page' %}"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Événements</a>
             </div>
         </div>
     </nav>

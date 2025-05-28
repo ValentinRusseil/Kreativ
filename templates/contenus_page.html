@@ -6,7 +6,7 @@
             Nos derniers contenus
         </h2>
         <button type="button" class="w-10 h-10 flex items-center justify-center" id="scroll-right">
-            <img src="{% static 'images/icons/next-icon.png' %}" alt="next-icon" class="w-6 h-8" />
+            <img src="{% static 'images/icons/next-icon.png' %}" alt="next-icon" loading="lazy" class="w-6 h-8" />
         </button>
     </div>
 
@@ -15,7 +15,7 @@
             {% for contenu in contenus %}
             <div class="min-w-[400px] h-[500px] rounded-2xl overflow-hidden relative group">
                 {% if contenu.image %}
-                <img src="{% static contenu.image %}" alt="Image" class="w-full h-full object-cover absolute inset-0" />
+                <img src="{% static contenu.image %}" alt="Image" loading="lazy" class="w-full h-full object-cover absolute inset-0" />
                 {% else %}
                 <div class="absolute inset-0 bg-gradient-to-br from-[#f04464] via-[#ff6b8b] to-[#ff97ab]"></div>
                 {% endif %}
