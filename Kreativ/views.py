@@ -61,3 +61,6 @@ def home_page(request):
     contenus = contenu_posts()
     
     return render(request, template_name="home_page.html", context={'contenus': contenus})
+
+def confidentiality_page(request):
+    return render(request, template_name="confidentiality_page.html")

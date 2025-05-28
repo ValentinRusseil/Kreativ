@@ -26,4 +26,5 @@ urlpatterns = [
     path('a_propos/', include('aPropos.urls')),
     path('contenu/', include('Contenu.urls')),
     path('evenement/', include('Evenement.urls')),
+    path('confidentiality/', views.confidentiality_page, name="confidentiality_page"),
 ]
